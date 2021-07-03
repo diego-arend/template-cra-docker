@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+## The project was created with the standard maintained by Facebook through the create-react-app package. The option to run through a docker container has been included. In this case it is necessary to execute the commands below.
+
+# Getting Started with Docker
+1) Run "docker-compose up" to start the Docker container
+2) To run dependencies installation or other services run "docker-compose run --rm app <'native code npm'>".
+Examples:
+    - install jest library: docker-compose run --rm app npm install jest
+    - run jest: docker-compose run --rm app npm test
+
+# Started with Create React App(default method to run on local machine)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
