@@ -1,6 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { FormattedMessage } from "react-intl";
+import logo from "../../assets/logo.svg";
+import "./style.css";
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <p>
+          <FormattedMessage id="hello_world" values={{ teste_value: 2 }} />
         </p>
         <a
           className="App-link"
