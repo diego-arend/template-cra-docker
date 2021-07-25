@@ -22,7 +22,7 @@ export const AppLogo = styled.img`
   }
 `;
 
-export const AppHeader = styled.h1`
+export const AppHeader = styled.header`
   background-color: #282c34;
   min-height: 100vh;
   display: flex;

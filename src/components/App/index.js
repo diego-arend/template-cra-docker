@@ -8,9 +8,9 @@ function App() {
     <S.WrapperApp>
       <S.AppHeader>
         <S.AppLogo src={logo} alt="logo" />
-        <p>
+        {/* <p>
           Edit <code>src/App.js</code> and save to reload.
-        </p>
+        </p> */}
         <p>
           <FormattedMessage id="hello_world" values={{ teste_value: 2 }} />
         </p>
