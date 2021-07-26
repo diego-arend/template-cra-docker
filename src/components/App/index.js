@@ -1,16 +1,24 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import logo from "../../assets/logo.svg";
+import BR from "../../assets/brazil.png";
+import EN from "../../assets/united-states.png";
+import ES from "../../assets/spain.png";
+import Select from "./../Select";
 import * as S from "./appStyles";
 
 function App() {
   return (
     <S.WrapperApp>
       <S.AppHeader>
+          <Select
+            optionValues={[
+              { id: 0, value: "pt-BR", image: BR },
+              { id: 1, value: "en-US", image: EN },
+              { id: 2, value: "es-ES", image: ES },
+            ]}
+          />
         <S.AppLogo src={logo} alt="logo" />
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p> */}
         <p>
           <FormattedMessage id="hello_world" values={{ teste_value: 2 }} />
         </p>
