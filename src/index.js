@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
-import LocalizationProvider from "./localization";
-import GlobalStyles from "../src/styles/global";
+import LocalizationProvider from "./translation/localization";
+import GlobalStyles from "./globalStyles";
 import { SettingsProvider } from "./context/settings";
 
 ReactDOM.render(

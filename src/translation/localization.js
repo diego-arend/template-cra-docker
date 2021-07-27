@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { IntlProvider } from "react-intl";
-import english from "./locales/en-US";
-import portuguese from "./locales/pt-BR";
-import spanish from "./locales/es-ES";
-import { initLOCALE } from "./constants/listconstants";
-import { SettingsContext } from "./context/settings";
+import english from "./en-US";
+import portuguese from "./pt-BR";
+import spanish from "./es-ES";
+import { initLOCALE } from "../constants/listconstants";
+import { SettingsContext } from "../context/settings";
 
 const locales = {
   "en-US": english,
