@@ -1,26 +1,22 @@
-import React, { useState } from "react";
-import { FormattedMessage } from "react-intl";
+import React, { useState, useContext } from "react";
+import { SettingsContext } from "../../context/settings";
 import BR from "../../assets/brazil.png";
 import * as S from "./selectStyles";
 
 const Select = ({ optionValues }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedImage, setselectedImage] = useState(BR);
-  const [selectedLanguage, setSelectedLanguage] = useState("pt-BR");
+  const [selectedImage, setSelectedImage] = useState(BR);
+  const [settingsLocale, setSettingsLocale] = useContext(SettingsContext);
 
   const toggling = () => setIsOpen(!isOpen);
 
-  const onOptionClicked = (id) => () => {
-    const object_verify = optionValues;
-    if (
-      object_verify !== null &&
-      object_verify !== undefined &&
-      object_verify.length > 0
-    ) {
-      for (let i = 0; i < object_verify.length; i += 1) {
-        if (id === object_verify[i].id) {
-          setSelectedLanguage(object_verify[i].value);
-          setselectedImage(object_verify[i].image);
+  const onOptionClicked = (id, object) => () => {
+    const values = object;
+    if (values !== null && values !== undefined && values.length > 0) {
+      for (let i = 0; i < values.length; i += 1) {
+        if (id === values[i].id) {
+          setSettingsLocale({locale: values[i].value});
+          setSelectedImage(values[i].image);
           setIsOpen(false);
           break;
         }
@@ -34,8 +30,12 @@ const Select = ({ optionValues }) => {
       renderDD = (
         <S.DropDownList>
           {object.map((option) => (
-            <S.ListItem onClick={onOptionClicked(option.id)} key={option.id}>
+            <S.ListItem
+              onClick={onOptionClicked(option.id, optionValues)}
+              key={option.id}
+            >
               <S.ListImage src={option.image} alt="country flag" />
+              <span>{option.value}</span>
             </S.ListItem>
           ))}
         </S.DropDownList>
@@ -48,12 +48,10 @@ const Select = ({ optionValues }) => {
 
   return (
     <S.SelectStyled>
-      <h3>
-        <FormattedMessage id="select_title" />
-      </h3>
       <S.DropDownContainer>
         <S.DropDownHeader onClick={toggling}>
           <S.InitialImage src={selectedImage} alt="teste img" />
+          <span>{settingsLocale.locale}</span>
         </S.DropDownHeader>
         {isOpen && (
           <S.DropDownListContainer>

@@ -10,11 +10,11 @@ export const DropDownContainer = styled.div`
 export const DropDownHeader = styled.div`
   margin-bottom: 0.1em;
   padding: 0.1em;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); */
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   color: #3faffa;
-  background: #ffffff;
+  background: #282c34;
 `;
 
 export const DropDownListContainer = styled.div`

@@ -1,1 +1,1 @@
-export const LOCALE = "pt-BR";
+export const initLOCALE = "pt-BR";

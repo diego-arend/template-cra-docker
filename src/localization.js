@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IntlProvider } from "react-intl";
 import english from "./locales/en-US";
 import portuguese from "./locales/pt-BR";
 import spanish from "./locales/es-ES";
-import { LOCALE } from "./constants/listconstants";
+import { initLOCALE } from "./constants/listconstants";
+import { SettingsContext } from "./context/settings";
 
 const locales = {
   "en-US": english,
@@ -11,8 +12,14 @@ const locales = {
   "es-ES": spanish,
 };
 
-const LocalizationProvider = ({ children, locale = LOCALE }) => {
-  const currentLocale = locales[locale];
+const LocalizationProvider = ({ children, ...props }) => {
+  const [settingsLocale] = useContext(SettingsContext);
+  const [currentLocale, setCurrentLocale] = useState(locales[initLOCALE]);
+
+  useEffect(() => {
+    setCurrentLocale(locales[settingsLocale.locale]);
+  }, [settingsLocale]);
+
   return (
     <IntlProvider
       locale={currentLocale.locale}
