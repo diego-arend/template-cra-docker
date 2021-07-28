@@ -1,5 +1,5 @@
 const messages = {
-  'hello_world': 'Hello World!{teste_value}',
+  'hello_world': 'Hello world!{teste_value}',
   'select_title': 'select language'
 };
 
