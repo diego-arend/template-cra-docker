@@ -1,8 +1,8 @@
-import React from "react";
-import { Router, Route, Switch } from "react-router";
-import Main from "./pages/Main";
-import UserInfo from "./pages/UserInfo";
-import NotFound from "./pages/NotFound";
+import React from 'react'
+import { Router, Route, Switch, Redirect } from 'react-router'
+import Main from './pages/Main'
+import UserInfo from './pages/UserInfo'
+import NotFound from './pages/NotFound'
 
 const BrowserRouter = ({ history }) => {
   return (
@@ -13,7 +13,7 @@ const BrowserRouter = ({ history }) => {
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>
-  );
-};
+  )
+}
 
-export default BrowserRouter;
+export default BrowserRouter

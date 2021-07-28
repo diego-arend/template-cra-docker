@@ -3,6 +3,7 @@ import GlobalStyles from "./../../globalStyles";
 import App from './../../components/App'
 
 const Main = () => {
+  console.log("call main")
   return (
     <Fragment>
       <App />
