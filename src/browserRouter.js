@@ -54,6 +54,7 @@ const BrowserRouter = ({ history }) => {
     <Router history={history}>
       <Switch>
         <Route exact path="/" component={Main} />
+        <Route exact path="/app" component={Main} />
         <Route exact path="/user-info" component={UserInfo} />
         <Route path="*" component={NotFound} />
       </Switch>
